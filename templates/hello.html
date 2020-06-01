@@ -1,0 +1,13 @@
+<html>
+  <body>
+    Hello!!! {% if today %}
+    <p>Today is {{today}}</p>
+    <p>{% for days in days_of_week %}{{days}}</p>
+    {%endfor%} {%endif%}
+    <ul>
+      {% for todo in todos %}
+      <li>{{ todo.id }} - {{ todo.title }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
