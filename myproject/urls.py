@@ -17,6 +17,10 @@ from django.conf.urls import url, include
 from django.contrib import admin
 # from myapp.views import hello
 admin.autodiscover()
+from api.resources import NoteResource, StateResource
+
+note_resource = NoteResource()
+state_resource = StateResource()
 
 urlpatterns = [
    #Examples
@@ -25,4 +29,6 @@ urlpatterns = [
 
    url(r'^admin/', include(admin.site.urls)),
    url(r'^myapp/', include('myapp.urls')),
+   url(r'^api/', include(note_resource.urls)),
+   url(r'^api/', include(state_resource.urls)),
 ]
